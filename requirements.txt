@@ -5,14 +5,17 @@ joblib
 jupyter
 loguru
 matplotlib
+networkx
 numpy
 pandas
 plotly
 python-dotenv
+python-louvain
 pmdarima
 scikit-learn
 scipy
 seaborn
 statsmodels
 streamlit
+umap-learn
 xgboost
