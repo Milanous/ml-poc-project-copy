@@ -1,0 +1,4 @@
+model_key,model_name,model_path,ari,nmi,n_clusters,silhouette
+kmeans,K-Means (k=8),/Users/milanviallet/Documents - MacBook Air de Milan/Albert/B2/Py B2/POC/ml-poc-project-copy/models/kmeans.joblib,0.11244143675169183,0.4321489603107853,2.0,-0.1019856933348232
+gmm,Gaussian Mixture Model (k=8),/Users/milanviallet/Documents - MacBook Air de Milan/Albert/B2/Py B2/POC/ml-poc-project-copy/models/gmm.joblib,0.004415011037527594,0.17641913282821833,2.0,-0.21847670159558985
+birch,BIRCH (k=8),/Users/milanviallet/Documents - MacBook Air de Milan/Albert/B2/Py B2/POC/ml-poc-project-copy/models/birch.joblib,0.11244143675169183,0.4321489603107853,2.0,-0.1019856933348232

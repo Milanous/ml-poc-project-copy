@@ -30,12 +30,35 @@ MODEL_METRICS_FILE = RESULTS_DIR / "model_metrics.csv"
 STREAMLIT_HOST = "localhost"
 STREAMLIT_PORT = 8501
 
-# Students must replace this example with their trained models.
-# Each entry must point to a serialized model saved as `.joblib`, `.pkl`, or `.pickle`.
+# ─── Models ───────────────────────────────────────────────────────────────────
+# Tâche : clustering non supervisé des communautés musicales (Node2Vec embeddings)
+# Les 3 modèles sont entraînés sur les embeddings scalés (RobustScaler, dim=32).
+# Chaque modèle est évalué sur X_test avec compute_metrics(y_test, model.predict(X_test)).
+# y_test = labels de communauté Louvain (pseudo-vérité terrain).
+
 MODELS = {
-    "model_a": {
-        "name": "Model A",
-        "description": "A simple baseline model.",
-        "path": MODELS_DIR / "model_a.pkl",
+    "kmeans": {
+        "name": "K-Means",
+        "description": (
+            "Baseline centroïde. k aligné sur le nombre de communautés Louvain. "
+            "Suppose des clusters sphériques et de variance homogène."
+        ),
+        "path": MODELS_DIR / "kmeans.joblib",
+    },
+    "gmm": {
+        "name": "Gaussian Mixture Model",
+        "description": (
+            "Modèle probabiliste EM. Gère les clusters elliptiques (covariance complète). "
+            "Assignement souple : chaque artiste a une probabilité d'appartenance à chaque composante."
+        ),
+        "path": MODELS_DIR / "gmm.joblib",
+    },
+    "birch": {
+        "name": "BIRCH",
+        "description": (
+            "Clustering hiérarchique par arbre de features (Balanced Iterative Reducing and Clustering). "
+            "Pas d'hypothèse sphérique, complexité O(n), predict() natif via sous-clusters."
+        ),
+        "path": MODELS_DIR / "birch.joblib",
     },
 }

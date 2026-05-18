@@ -15,6 +15,7 @@ pmdarima
 scikit-learn
 scipy
 seaborn
+spotipy
 statsmodels
 streamlit
 umap-learn
